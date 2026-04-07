@@ -1,0 +1,23 @@
+<h2>Restaurant System</h2>
+
+<form method="POST">
+    <select name="item">
+        {% for item in menu %}
+        <option value="{{item}}">{{item}}</option>
+        {% endfor %}
+    </select>
+
+    <input type="number" name="qty" placeholder="Quantity">
+    <button type="submit">Add</button>
+</form>
+
+<h3>Orders:</h3>
+<ul>
+    {% for o in orders %}
+    <li>{{o[0]}} x{{o[1]}} = {{o[2]}} EGP</li>
+    {% endfor %}
+</ul>
+
+<p>Subtotal: {{total}}</p>
+<p>Tax: {{tax}}</p>
+<p>Total: {{final}}</p>
