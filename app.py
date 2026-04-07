@@ -28,4 +28,7 @@ def home():
 
     return render_template("index.html", menu=menu, orders=orders, total=total, tax=tax, final=final)
 
-app.run()
+import os
+
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
